@@ -20,8 +20,8 @@ public class ReadExcel {
 
 	public static String readExcel() throws IOException {
 		FileInputStream fis = new FileInputStream(new File("src/test/resources/test.xlsx"));
-		XSSFWorkbook xssfWorkbook1 = new XSSFWorkbook(fis);
-		XSSFSheet sheet = xssfWorkbook1.getSheetAt(0);
+		XSSFWorkbook xssfWorkbook = new XSSFWorkbook(fis);
+		XSSFSheet sheet = xssfWorkbook.getSheetAt(0);
 		int lastRowNumber = sheet.getLastRowNum();
 		for (int i = 1; i <= lastRowNumber; i++) {
 			for (int j = 0; j <= sheet.getRow(i).getLastCellNum(); j++)
